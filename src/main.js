@@ -10,10 +10,9 @@ function main(sources) {
   const sliderWrapperTree$ = sliderWrapper$.DOM;
   const sliderWrapperState$ = sliderWrapper$.state$;
 
-  const vtree$ = sliderWrapperTree$.withLatestFrom( sliderWrapperState$,
-    (sliderWrapperTree,sliderWrapperState) =>
+  const vtree$ = sliderWrapperTree$.map( (SliderWrapperTree) =>
       div('.container', [
-        sliderWrapperTree
+        SliderWrapperTree
       ])
   );
 
