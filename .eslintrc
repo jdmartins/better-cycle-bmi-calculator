@@ -1,0 +1,11 @@
+{
+    "ecmaFeatures": {
+        "modules": true,
+        "arrowFunctions": true,
+        "templateStrings": true
+    },
+    "env": {
+        "es6": true,
+        "browser": true
+    }
+}

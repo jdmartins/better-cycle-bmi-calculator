@@ -1,0 +1,21 @@
+.slider-wrapper {
+  border: 3px solid #A7F4EB;
+  border-radius: 4px;
+  background-color:#333;
+  position: relative;
+  display: block;
+
+  &-title {
+    margin: 0;
+    position: absolute;
+    top: 5px; left: 5px;
+  }
+  &-inner {
+    margin-top: 40px;
+    & > * {
+      margin: 15px;
+    }
+  }
+
+
+}

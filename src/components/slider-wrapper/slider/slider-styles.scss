@@ -1,0 +1,76 @@
+// --- settings ---
+
+// inner elements
+$slider-color: #7DE5C3;
+$slider-dimensions: 20px;
+$slider-bg-color: #333;
+
+@mixin slider-thumb() {
+  border: 3px solid $slider-color;
+  height: $slider-dimensions;
+  width: $slider-dimensions;
+  border-radius: 100%;
+  background-color: $slider-bg-color;
+  cursor: pointer;
+}
+@mixin slider-track() {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background-color: $slider-color;
+}
+
+.labeled-slider {
+  & label {
+    margin-right: 10px;
+    text-transform: uppercase;
+  }
+  & input {
+    float: right;
+
+  }
+
+
+}
+
+
+
+
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 300px; /* Specific width is required for Firefox. */
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; /* Hides the slider so custom styles can be added */
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  @include slider-track();
+}
+
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -8px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  @include slider-thumb();
+
+}
+
+input[type=range]::-moz-range-thumb {
+  @include slider-thumb();
+}
+
+input[type=range]::-ms-thumb {
+  @include slider-thumb();
+}
